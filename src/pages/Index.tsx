@@ -38,7 +38,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 md:p-8">
-      <div className="w-full max-w-2xl mx-auto">
+      <div className="w-full max-w-xl mx-auto">
         <div className="bg-card rounded-3xl p-6 md:p-8 shadow-soft border-2 border-primary/30 space-y-6">
           {/* Header */}
           <div className="text-center space-y-2">
