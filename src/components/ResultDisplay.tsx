@@ -12,10 +12,16 @@ interface ResultDisplayProps {
 export const ResultDisplay = ({ result, onSpinAgain, onClearAll }: ResultDisplayProps) => {
   useEffect(() => {
     if (result) {
-      // Trigger confetti
+      // Trigger Spider-Man themed confetti
       const duration = 3000;
       const animationEnd = Date.now() + duration;
-      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+      const defaults = { 
+        startVelocity: 30, 
+        spread: 360, 
+        ticks: 60, 
+        zIndex: 0,
+        colors: ['#e11d48', '#2563eb', '#000000', '#ffffff'] // Spider-Man colors
+      };
 
       const randomInRange = (min: number, max: number) => {
         return Math.random() * (max - min) + min;
@@ -53,8 +59,10 @@ export const ResultDisplay = ({ result, onSpinAgain, onClearAll }: ResultDisplay
       <div className="bg-card rounded-2xl p-8 shadow-glow border-2 border-primary">
         <div className="flex items-center justify-center gap-2 mb-4">
           <Sparkles className="h-6 w-6 text-primary" />
-          <h2 className="text-2xl font-bold text-center">You should choose:</h2>
-          <Sparkles className="h-6 w-6 text-primary" />
+          <h2 className="text-2xl font-bold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            🕷️ Your Choice:
+          </h2>
+          <Sparkles className="h-6 w-6 text-secondary" />
         </div>
         <p className="text-4xl font-bold text-center text-primary">
           {result}
@@ -64,7 +72,7 @@ export const ResultDisplay = ({ result, onSpinAgain, onClearAll }: ResultDisplay
       <div className="flex gap-3">
         <Button
           onClick={onSpinAgain}
-          className="flex-1 gradient-primary hover:opacity-90 transition-smooth shadow-soft"
+          className="flex-1 gradient-primary hover:opacity-90 transition-smooth shadow-soft border-2 border-primary/50"
           size="lg"
         >
           <RotateCcw className="h-5 w-5 mr-2" />
