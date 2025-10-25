@@ -44,10 +44,10 @@ const Index = () => {
           {/* Header */}
           <div className="text-center space-y-2">
             <h1 className="text-5xl md:text-6xl font-bold text-primary">
-              🧸 Choosy
+              🎯 Choosy
             </h1>
             <p className="text-lg text-muted-foreground">
-              Can't decide? Let the teddy bear wheel choose for you!
+              Can't decide? Let the wheel choose for you!
             </p>
           </div>
 

@@ -7,16 +7,16 @@ interface SpinWheelProps {
 }
 
 const WHEEL_COLORS = [
-  "hsl(30, 35%, 55%)",
-  "hsl(25, 45%, 65%)",
-  "hsl(35, 50%, 70%)",
-  "hsl(28, 40%, 60%)",
-  "hsl(32, 38%, 58%)",
-  "hsl(27, 42%, 62%)",
-  "hsl(33, 45%, 67%)",
-  "hsl(29, 37%, 56%)",
-  "hsl(31, 43%, 64%)",
-  "hsl(26, 40%, 59%)",
+  "hsl(210, 80%, 55%)",
+  "hsl(270, 60%, 60%)",
+  "hsl(160, 70%, 50%)",
+  "hsl(340, 75%, 60%)",
+  "hsl(45, 90%, 60%)",
+  "hsl(190, 70%, 50%)",
+  "hsl(290, 65%, 58%)",
+  "hsl(20, 85%, 58%)",
+  "hsl(140, 65%, 50%)",
+  "hsl(250, 70%, 60%)",
 ];
 
 export const SpinWheel = ({ options, isSpinning, onSpinComplete }: SpinWheelProps) => {
@@ -87,19 +87,19 @@ export const SpinWheel = ({ options, isSpinning, onSpinComplete }: SpinWheelProp
     ctx.arc(0, 0, 25, 0, 2 * Math.PI);
     ctx.fillStyle = "white";
     ctx.fill();
-    ctx.strokeStyle = "hsl(30, 35%, 55%)";
+    ctx.strokeStyle = "hsl(210, 80%, 55%)";
     ctx.lineWidth = 4;
     ctx.stroke();
 
     ctx.restore();
 
-    // Draw pointer (triangle at bottom pointing down)
+    // Draw pointer (triangle at top pointing down)
     ctx.beginPath();
-    ctx.moveTo(centerX, canvas.height - 20);
-    ctx.lineTo(centerX - 15, canvas.height - 50);
-    ctx.lineTo(centerX + 15, canvas.height - 50);
+    ctx.moveTo(centerX, 50);
+    ctx.lineTo(centerX - 15, 20);
+    ctx.lineTo(centerX + 15, 20);
     ctx.closePath();
-    ctx.fillStyle = "hsl(30, 35%, 55%)";
+    ctx.fillStyle = "hsl(210, 80%, 55%)";
     ctx.fill();
     ctx.strokeStyle = "white";
     ctx.lineWidth = 2;
