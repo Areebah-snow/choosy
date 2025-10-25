@@ -59,10 +59,10 @@ export const ResultDisplay = ({ result, onSpinAgain, onClearAll }: ResultDisplay
       <div className="bg-card rounded-2xl p-8 shadow-glow border-2 border-primary">
         <div className="flex items-center justify-center gap-2 mb-4">
           <Sparkles className="h-6 w-6 text-primary" />
-          <h2 className="text-2xl font-bold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <h2 className="text-2xl font-bold text-center text-primary">
             🕷️ Your Choice:
           </h2>
-          <Sparkles className="h-6 w-6 text-secondary" />
+          <Sparkles className="h-6 w-6 text-primary" />
         </div>
         <p className="text-4xl font-bold text-center text-primary">
           {result}
@@ -72,7 +72,7 @@ export const ResultDisplay = ({ result, onSpinAgain, onClearAll }: ResultDisplay
       <div className="flex gap-3">
         <Button
           onClick={onSpinAgain}
-          className="flex-1 gradient-primary hover:opacity-90 transition-smooth shadow-soft border-2 border-primary/50"
+          className="flex-1 bg-primary hover:bg-primary/90 transition-smooth shadow-soft"
           size="lg"
         >
           <RotateCcw className="h-5 w-5 mr-2" />
