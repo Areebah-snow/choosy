@@ -12,7 +12,7 @@ interface ResultDisplayProps {
 export const ResultDisplay = ({ result, onSpinAgain, onClearAll }: ResultDisplayProps) => {
   useEffect(() => {
     if (result) {
-      // Trigger Spider-Man themed confetti
+      // Trigger confetti
       const duration = 3000;
       const animationEnd = Date.now() + duration;
       const defaults = { 
@@ -20,7 +20,7 @@ export const ResultDisplay = ({ result, onSpinAgain, onClearAll }: ResultDisplay
         spread: 360, 
         ticks: 60, 
         zIndex: 0,
-        colors: ['#e11d48', '#2563eb', '#000000', '#ffffff'] // Spider-Man colors
+        colors: ['#a855f7', '#d946ef', '#ec4899', '#06b6d4', '#10b981'] // Vibrant choosy colors
       };
 
       const randomInRange = (min: number, max: number) => {
@@ -60,9 +60,9 @@ export const ResultDisplay = ({ result, onSpinAgain, onClearAll }: ResultDisplay
         <div className="flex items-center justify-center gap-2 mb-4">
           <Sparkles className="h-6 w-6 text-primary" />
           <h2 className="text-2xl font-bold text-center text-primary">
-            🕷️ Your Choice:
+            ✨ You should choose:
           </h2>
-          <Sparkles className="h-6 w-6 text-primary" />
+          <Sparkles className="h-6 w-6 text-accent" />
         </div>
         <p className="text-4xl font-bold text-center text-primary">
           {result}

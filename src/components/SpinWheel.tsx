@@ -7,16 +7,16 @@ interface SpinWheelProps {
 }
 
 const WHEEL_COLORS = [
-  "hsl(0, 85%, 45%)",    // Spider-Man red
-  "hsl(220, 90%, 50%)",  // Spider-Man blue
-  "hsl(0, 90%, 35%)",    // Dark red
-  "hsl(220, 80%, 40%)",  // Dark blue
-  "hsl(0, 85%, 55%)",    // Bright red
-  "hsl(220, 85%, 60%)",  // Bright blue
-  "hsl(0, 80%, 40%)",    // Medium red
-  "hsl(220, 75%, 45%)",  // Medium blue
-  "hsl(0, 75%, 50%)",    // Red variant
-  "hsl(220, 85%, 55%)",  // Blue variant
+  "hsl(270, 70%, 60%)",  // Purple
+  "hsl(290, 65%, 55%)",  // Pink-purple
+  "hsl(320, 85%, 60%)",  // Hot pink
+  "hsl(340, 75%, 60%)",  // Pink
+  "hsl(200, 80%, 55%)",  // Cyan
+  "hsl(170, 70%, 50%)",  // Teal
+  "hsl(45, 90%, 60%)",   // Yellow
+  "hsl(25, 85%, 58%)",   // Orange
+  "hsl(140, 65%, 50%)",  // Green
+  "hsl(260, 70%, 55%)",  // Deep purple
 ];
 
 export const SpinWheel = ({ options, isSpinning, onSpinComplete }: SpinWheelProps) => {
@@ -85,9 +85,9 @@ export const SpinWheel = ({ options, isSpinning, onSpinComplete }: SpinWheelProp
     // Draw center circle
     ctx.beginPath();
     ctx.arc(0, 0, 25, 0, 2 * Math.PI);
-    ctx.fillStyle = "hsl(0, 0%, 10%)";
+    ctx.fillStyle = "white";
     ctx.fill();
-    ctx.strokeStyle = "hsl(0, 85%, 45%)";
+    ctx.strokeStyle = "hsl(270, 70%, 60%)";
     ctx.lineWidth = 4;
     ctx.stroke();
 
@@ -99,9 +99,9 @@ export const SpinWheel = ({ options, isSpinning, onSpinComplete }: SpinWheelProp
     ctx.lineTo(centerX - 15, 20);
     ctx.lineTo(centerX + 15, 20);
     ctx.closePath();
-    ctx.fillStyle = "hsl(0, 85%, 45%)";
+    ctx.fillStyle = "hsl(270, 70%, 60%)";
     ctx.fill();
-    ctx.strokeStyle = "hsl(0, 0%, 10%)";
+    ctx.strokeStyle = "white";
     ctx.lineWidth = 3;
     ctx.stroke();
   };

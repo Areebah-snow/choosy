@@ -8,40 +8,40 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 60% 97%;
-    --foreground: 0 5% 10%;
+    --background: 270 50% 98%;
+    --foreground: 270 10% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 5% 10%;
+    --card-foreground: 270 10% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 5% 10%;
+    --popover-foreground: 270 10% 10%;
 
-    --primary: 0 85% 45%;
+    --primary: 270 70% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 90% 50%;
+    --secondary: 290 65% 55%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 20% 92%;
-    --muted-foreground: 0 5% 40%;
+    --muted: 270 30% 95%;
+    --muted-foreground: 270 10% 45%;
 
-    --accent: 0 85% 45%;
+    --accent: 320 85% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 30% 85%;
-    --input: 0 30% 85%;
-    --ring: 0 85% 45%;
+    --border: 270 30% 90%;
+    --input: 270 30% 90%;
+    --ring: 270 70% 60%;
 
     --radius: 1rem;
     
-    --gradient-bg: linear-gradient(180deg, hsl(0 60% 97%), hsl(0 40% 95%));
+    --gradient-bg: linear-gradient(135deg, hsl(270 50% 98%), hsl(290 45% 96%));
     
-    --shadow-soft: 0 4px 20px -2px hsl(0 85% 45% / 0.15);
-    --shadow-glow: 0 0 40px hsl(0 85% 45% / 0.35);
+    --shadow-soft: 0 4px 20px -2px hsl(270 70% 60% / 0.15);
+    --shadow-glow: 0 0 40px hsl(270 70% 60% / 0.25);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -73,29 +73,6 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
     background: var(--gradient-bg);
     min-height: 100vh;
-    position: relative;
-  }
-  
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-      url('/src/assets/spiderman-web.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.08;
-    pointer-events: none;
-    z-index: 0;
-  }
-  
-  body > * {
-    position: relative;
-    z-index: 1;
   }
 }
 

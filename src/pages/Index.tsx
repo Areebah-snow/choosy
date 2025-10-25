@@ -43,10 +43,10 @@ const Index = () => {
           {/* Header */}
           <div className="text-center space-y-2">
             <h1 className="text-5xl md:text-6xl font-bold text-primary">
-              🕷️ Choosy
+              🎯 Choosy
             </h1>
             <p className="text-lg text-muted-foreground font-medium">
-              With great choices comes great responsibility!
+              Can't decide? Let the wheel choose for you!
             </p>
           </div>
 
@@ -87,7 +87,7 @@ const Index = () => {
               size="lg"
               className="w-full bg-primary hover:bg-primary/90 text-primary-foreground transition-smooth shadow-soft disabled:opacity-50 text-lg font-bold py-6"
             >
-              {isSpinning ? "🕸️ Spinning..." : "🕷️ Spin the Wheel!"}
+              {isSpinning ? "✨ Spinning..." : "🎯 Spin the Wheel!"}
             </Button>
           )}
 
