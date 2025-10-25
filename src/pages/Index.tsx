@@ -51,6 +51,18 @@ const Index = () => {
             </p>
           </div>
 
+          {/* Input Section */}
+          <div className="space-y-4">
+            <h2 className="text-xl font-bold text-center text-primary">
+              Your Options
+            </h2>
+            <OptionInput
+              options={options}
+              onOptionsChange={setOptions}
+              maxOptions={MAX_OPTIONS}
+            />
+          </div>
+
           {/* Wheel */}
           {options.length >= MIN_OPTIONS ? (
             <div className="flex justify-center">
@@ -68,27 +80,6 @@ const Index = () => {
             </div>
           )}
 
-          {/* Result */}
-          {result && (
-            <ResultDisplay
-              result={result}
-              onSpinAgain={handleSpinAgain}
-              onClearAll={handleClearAll}
-            />
-          )}
-
-          {/* Input Section */}
-          <div className="space-y-4">
-            <h2 className="text-xl font-bold text-center text-primary">
-              Your Options
-            </h2>
-            <OptionInput
-              options={options}
-              onOptionsChange={setOptions}
-              maxOptions={MAX_OPTIONS}
-            />
-          </div>
-
           {/* Spin Button */}
           {!result && (
             <Button
@@ -99,6 +90,15 @@ const Index = () => {
             >
               {isSpinning ? "Spinning..." : "🎯 Spin the Wheel!"}
             </Button>
+          )}
+
+          {/* Result */}
+          {result && (
+            <ResultDisplay
+              result={result}
+              onSpinAgain={handleSpinAgain}
+              onClearAll={handleClearAll}
+            />
           )}
         </div>
       </div>
