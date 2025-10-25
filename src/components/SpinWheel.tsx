@@ -129,11 +129,11 @@ export const SpinWheel = ({ options, isSpinning, onSpinComplete }: SpinWheelProp
         animationRef.current = requestAnimationFrame(animate);
       } else {
         // Calculate which option was selected
-        // Arrow points down from top (90 degrees), account for wheel rotation
+        // Arrow is at top (270 degrees in canvas coords), account for wheel rotation
         const finalRotation = currentRotation % 360;
         const sliceAngle = 360 / options.length;
         // Calculate which slice is at the top (where arrow points)
-        const angleAtTop = (90 - finalRotation + 360) % 360;
+        const angleAtTop = (270 - finalRotation + 360) % 360;
         const selectedIndex = Math.floor(angleAtTop / sliceAngle) % options.length;
         onSpinComplete(options[selectedIndex]);
       }
