@@ -149,8 +149,8 @@ export const SpinWheel = ({ options, isSpinning, onSpinComplete }: SpinWheelProp
     <div className="relative flex items-center justify-center">
       <canvas
         ref={canvasRef}
-        width={320}
-        height={320}
+        width={280}
+        height={280}
         className="max-w-full h-auto drop-shadow-lg"
       />
     </div>

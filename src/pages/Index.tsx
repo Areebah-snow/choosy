@@ -38,21 +38,21 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 md:p-8">
-      <div className="w-full max-w-xl mx-auto">
-        <div className="bg-card rounded-3xl p-6 md:p-8 shadow-soft border-2 border-primary/30 space-y-6">
+      <div className="w-full max-w-md mx-auto">
+        <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft border-2 border-primary/30 space-y-4">
           {/* Header */}
-          <div className="text-center space-y-2">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary">
+          <div className="text-center space-y-1">
+            <h1 className="text-3xl md:text-4xl font-bold text-primary">
               🎯 Choosy
             </h1>
-            <p className="text-base text-muted-foreground font-medium">
+            <p className="text-sm text-muted-foreground font-medium">
               Can't decide? Let the wheel choose for you!
             </p>
           </div>
 
           {/* Input Section */}
-          <div className="space-y-4">
-            <h2 className="text-lg font-bold text-center text-primary">
+          <div className="space-y-3">
+            <h2 className="text-base font-bold text-center text-primary">
               Your Options
             </h2>
             <OptionInput
@@ -72,8 +72,8 @@ const Index = () => {
               />
             </div>
           ) : (
-            <div className="text-center py-8">
-              <p className="text-muted-foreground">
+            <div className="text-center py-4">
+              <p className="text-sm text-muted-foreground">
                 Add at least {MIN_OPTIONS} options to see the wheel
               </p>
             </div>
@@ -84,8 +84,7 @@ const Index = () => {
             <Button
               onClick={handleSpin}
               disabled={!canSpin}
-              size="lg"
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground transition-smooth shadow-soft disabled:opacity-50 text-base font-bold py-5"
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground transition-smooth shadow-soft disabled:opacity-50 text-sm font-bold py-4"
             >
               {isSpinning ? "✨ Spinning..." : "🎯 Spin the Wheel!"}
             </Button>
