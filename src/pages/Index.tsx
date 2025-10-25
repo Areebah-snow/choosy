@@ -38,76 +38,68 @@ const Index = () => {
   const canSpin = options.length >= MIN_OPTIONS && !isSpinning;
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start p-4 md:p-8">
-      <div className="w-full max-w-4xl mx-auto space-y-8">
-        {/* Header */}
-        <div className="text-center space-y-2 pt-8">
-          <div className="flex items-center justify-center gap-2">
-            <Sparkles className="h-8 w-8 text-primary" />
-            <h1 className="text-5xl md:text-6xl font-bold gradient-primary bg-clip-text text-transparent">
-              Choosy
+    <div className="min-h-screen flex items-center justify-center p-4 md:p-8">
+      <div className="w-full max-w-2xl mx-auto">
+        <div className="bg-card rounded-3xl p-8 md:p-12 shadow-soft border border-border space-y-8">
+          {/* Header */}
+          <div className="text-center space-y-2">
+            <h1 className="text-5xl md:text-6xl font-bold text-primary">
+              🧸 Choosy
             </h1>
-            <Sparkles className="h-8 w-8 text-secondary" />
+            <p className="text-lg text-muted-foreground">
+              Can't decide? Let the teddy bear wheel choose for you!
+            </p>
           </div>
-          <p className="text-lg md:text-xl text-muted-foreground">
-            Can't decide? Let the wheel choose for you!
-          </p>
-        </div>
 
-        {/* Main Content */}
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-          {/* Left: Input Section */}
-          <div className="space-y-6">
-            <div className="bg-card rounded-2xl p-6 shadow-soft border border-border">
-              <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-                <span className="gradient-primary bg-clip-text text-transparent">
-                  Add Your Options
-                </span>
-              </h2>
-              <OptionInput
+          {/* Wheel */}
+          {options.length >= MIN_OPTIONS ? (
+            <div className="flex justify-center">
+              <SpinWheel
                 options={options}
-                onOptionsChange={setOptions}
-                maxOptions={MAX_OPTIONS}
+                isSpinning={isSpinning}
+                onSpinComplete={handleSpinComplete}
               />
             </div>
+          ) : (
+            <div className="text-center py-8">
+              <p className="text-muted-foreground">
+                Add at least {MIN_OPTIONS} options to see the wheel
+              </p>
+            </div>
+          )}
 
-            {!result && (
-              <Button
-                onClick={handleSpin}
-                disabled={!canSpin}
-                size="lg"
-                className="w-full gradient-primary hover:opacity-90 transition-smooth shadow-soft disabled:opacity-50 text-lg font-bold py-6"
-              >
-                {isSpinning ? "Spinning..." : "Spin the Wheel!"}
-              </Button>
-            )}
+          {/* Result */}
+          {result && (
+            <ResultDisplay
+              result={result}
+              onSpinAgain={handleSpinAgain}
+              onClearAll={handleClearAll}
+            />
+          )}
+
+          {/* Input Section */}
+          <div className="space-y-4">
+            <h2 className="text-xl font-bold text-center text-primary">
+              Your Options
+            </h2>
+            <OptionInput
+              options={options}
+              onOptionsChange={setOptions}
+              maxOptions={MAX_OPTIONS}
+            />
           </div>
 
-          {/* Right: Wheel or Result */}
-          <div className="flex flex-col items-center justify-center space-y-6">
-            {options.length >= MIN_OPTIONS ? (
-              <>
-                <SpinWheel
-                  options={options}
-                  isSpinning={isSpinning}
-                  onSpinComplete={handleSpinComplete}
-                />
-                {result && (
-                  <ResultDisplay
-                    result={result}
-                    onSpinAgain={handleSpinAgain}
-                    onClearAll={handleClearAll}
-                  />
-                )}
-              </>
-            ) : (
-              <div className="bg-card rounded-2xl p-8 shadow-soft border border-border text-center">
-                <p className="text-muted-foreground">
-                  Add at least {MIN_OPTIONS} options to see the wheel
-                </p>
-              </div>
-            )}
-          </div>
+          {/* Spin Button */}
+          {!result && (
+            <Button
+              onClick={handleSpin}
+              disabled={!canSpin}
+              size="lg"
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground transition-smooth shadow-soft disabled:opacity-50 text-lg font-bold py-6"
+            >
+              {isSpinning ? "Spinning..." : "🎯 Spin the Wheel!"}
+            </Button>
+          )}
         </div>
       </div>
     </div>
