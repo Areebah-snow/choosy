@@ -80,24 +80,14 @@ const Index = () => {
           )}
 
           {/* Spin Button */}
-          {!result && (
-            <Button
-              onClick={handleSpin}
-              disabled={!canSpin}
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground transition-smooth shadow-soft disabled:opacity-50 text-sm font-bold py-4"
-            >
-              {isSpinning ? "✨ Spinning..." : "🎯 Spin the Wheel!"}
-            </Button>
-          )}
+          <Button
+            onClick={handleSpin}
+            disabled={!canSpin}
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground transition-smooth shadow-soft disabled:opacity-50 text-sm font-bold py-4"
+          >
+            {isSpinning ? "✨ Spinning..." : "🎯 Spin the Wheel!"}
+          </Button>
 
-          {/* Result */}
-          {result && (
-            <ResultDisplay
-              result={result}
-              onSpinAgain={handleSpinAgain}
-              onClearAll={handleClearAll}
-            />
-          )}
         </div>
       </div>
     </div>
