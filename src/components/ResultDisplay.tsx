@@ -56,7 +56,7 @@ export const ResultDisplay = ({ result, onSpinAgain, onClearAll }: ResultDisplay
           <h2 className="text-2xl font-bold text-center">You should choose:</h2>
           <Sparkles className="h-6 w-6 text-primary" />
         </div>
-        <p className="text-4xl font-bold text-center gradient-primary bg-clip-text text-transparent">
+        <p className="text-4xl font-bold text-center text-primary">
           {result}
         </p>
       </div>
